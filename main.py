@@ -12,7 +12,7 @@ origins = [
     "*"
 ] 
 
-token_global = "123456789456123456789"
+token_global = "Qazplm123"
 
 def verificar_token(token: str = Header(...)):
     if token != token_global:  
@@ -45,9 +45,9 @@ async def show_all(token: str = Depends(verificar_token)):
     
     try:
         connection = mysql.connector.connect(
-            host='integra2db.cdygn8mgmkud.us-east-1.rds.amazonaws.com',
-            user='erios',
-            password='Qazplm123!',
+            host='integra-db.cixttkwrfvm3.us-east-1.rds.amazonaws.com',
+            user='admin',
+            password='adminintegra',
             database='users'
         )
         cursor = connection.cursor()
@@ -77,9 +77,9 @@ async def show_all(token: str = Depends(verificar_token)):
 def show_user_by_id(id, token: str = Depends(verificar_token)):
     try:
         connection = mysql.connector.connect(
-            host='integra2db.cdygn8mgmkud.us-east-1.rds.amazonaws.com',
-            user='erios',
-            password='Qazplm123!',
+            host='integra-db.cixttkwrfvm3.us-east-1.rds.amazonaws.com',
+            user='admin',
+            password='adminintegra',
             database='users'
         )
         
@@ -119,9 +119,9 @@ def add_user(user: User, token: str = Depends(verificar_token)):
     # vease User para ver como debe ir la infomación.
     try:
         connection = mysql.connector.connect(
-            host='integra2db.cdygn8mgmkud.us-east-1.rds.amazonaws.com',
-            user='erios',
-            password='Qazplm123!',
+            host='integra-db.cixttkwrfvm3.us-east-1.rds.amazonaws.com',
+            user='admin',
+            password='adminintegra',
             database='users'
         )
         
@@ -170,9 +170,9 @@ def add_user(user: User, token: str = Depends(verificar_token)):
 def delete_user(id, token: str = Depends(verificar_token)):
     try:
         connection = mysql.connector.connect(
-            host='integra2db.cdygn8mgmkud.us-east-1.rds.amazonaws.com',
-            user='erios',
-            password='Qazplm123!',
+            host='integra-db.cixttkwrfvm3.us-east-1.rds.amazonaws.com',
+            user='admin',
+            password='adminintegra',
             database='users'
         )
         
